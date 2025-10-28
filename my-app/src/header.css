@@ -1,17 +1,98 @@
-.Cabeçalho nav {
-  height: 100px;
-  background-color: rgb(200, 173, 210);
+.Cabeçalho {}
+
+.Cabeçalho .nav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 13vh;
+  /* height: 12%; */
+  background-color: #323946;
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 10px;
+  z-index: 100;
+}
+.Cabeçalho .nav h1 {
+  color: var(--text-primario);
+  position: absolute;
+  left: 0;
+  font-size: 2rem;
+  padding: 0rem 1rem;
 }
 
-.Cabeçalho nav a {
-    padding: 0px 20px;
-  text-decoration: none;
-  font-size: 20px;
-  color: rgb(20, 20, 20);
+.Cabeçalho .nav a {
+  /* padding: 10px 50px; */
+  padding: 0.8rem 2.2rem;
+  font-size: 1.8rem;
+  color: var(--text-primario);
+  font-weight: 500;
+}
+
+.Cabeçalho nav a:hover {
+  color: aqua;
+}
+
+.Menu-Hamburguer {
+  display: none;
+  margin-right: 1.4rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.linha1,
+.linha2,
+.linha3 {
+  margin: 0.5rem 0;
+  width: 100%;
+  height: 0.35rem;
+  background-color: var(--text-primario);
+}
+
+.nav-responsive {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  padding-left: 3.3rem;
+}
+
+.nav-responsive a {
+  display: none;
+  color: var(--text-primario);
+  padding: 1rem;
+}
+
+.change .linha1 {
+  transform: translate(0, 0.65rem) rotate(-45deg);
+
 }
 
 
+.change .linha2 {
+  opacity: 0;
+
+}
+
+.change .linha3 {
+  transform: translate(0, -0.98rem) rotate(45deg);
+
+}
+
+@media (width < 768px) {
+  .Menu-Hamburguer {
+    display: block;
+  } 
+  
+  .nav-responsive{
+    background-color: var(--cor-pricipal);
+    
+  }
+  
+   .nav-responsive a {
+    display: block;
+    font-size: 1.5rem;
+
+  }
+
+}

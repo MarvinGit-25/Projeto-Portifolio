@@ -1,45 +1,231 @@
-import React  from "react"
+import { React } from "react"
 import './section.css'
-import Img from 'react-image'
-import IMG from "../../img/img1.jpeg"
-export default function Section(){
+import Formulario from "./Formulario"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+import { faInstagram } from "@fortawesome/free-brands-svg-icons"
+import { faCode } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "react-router-dom"
+import Perfil from "./img/meuPerfilWeb3D.png"
+import Img1 from "./img/img1.jpeg"
+import Img2 from "./img/img2.jpeg"
+import Img3 from "./img/img3.jpeg"
+import Img4 from "./img/img4.jpeg"
+import Img5 from "./img/img4.jpeg"
+import Img16 from "./img/img6.jpeg"
 
+export default function Section() {
+  return (
+    <main className="all-section">
+      <section className="home" id="home">
+        <div class="home-content">
+          <h3>Olá visitante!</h3>
+          <h1>Meu nome é Marcos Vinicius</h1>
+          <h2>Desenvolvedor<span> Front-end</span></h2>
 
-    return(
-        <section class="home" id="home">
-          <div>
-            {<img src="../../img/img1.jpeg" alt="" />}
+          {/* <p>
+            Sou um estudante de desenvolvimento web
+            tenho pouca experiência de mercado, mas muita
+            força de vontade.
+            Atualmente busco uma vaga de estagio para aprimorar
+            meus conhecimentos
+          </p> */}
+
+          <div className="social-media">
+            <Link to="https://www.facebook.com/share/1SeD6JYVP8/?mibextid=wwXIfr"
+              target="blank"><FontAwesomeIcon icon={faFacebookF} />
+            </Link>
+
+            <Link to="https://www.instagram.com/viniciussilva8272?igsh=MXVlYmRoMTd2N2k2aA%3D%3D&utm_source=qr"
+              target="blank"><FontAwesomeIcon icon={faInstagram} />
+            </Link>
+
+            <Link to="https://www.linkedin.com/in/marcos-vinicius-rocha-da-silva-91328b20
+            b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="blank"><FontAwesomeIcon icon={faLinkedinIn} />
+            </Link>
           </div>
-      <div class="home-content">
-        <h3>Buenas, im</h3>
-        <h1>Marcos Vinicius</h1>
-        <h3>web <span>development</span></h3>
+          <div className="div-button">
+            <button className="button-cv">Dowload CV</button>
+          </div>
+        </div>
+        <div className="home-img">
+          <img src={Perfil} alt="perfil do Portifolio" />
+        </div>
+      </section>
 
-        <p>
-          Olá, meu nome é Marcos Vinicius, tenho 29 anos, 
-          atualmente estudo desenvolvimento web 
-          tenho pouca experiência de mercado, mas muita
-          força de vontade.
-          Atualmente busco uma vaga de estagio para aprimorar 
-          meus conhecimentos
-        </p>
+      <section className="services">
+        <h2>Meus <span>serviços</span></h2>
 
-        <div class="social-media">
-            
-          <a href="#"><i class="bx bxl-facebook"></i></a>
-          <a href="#"><i class="bx bxl-instagram"></i></a>
-          <a href="#"><i class="bx bxl-linkedin"></i></a>
+        <div className="services-container">
+          <div class="services-box">
+
+            <span className="icon"><FontAwesomeIcon icon={faCode} /></span>
+            <h3>web Development</h3>
+            <p>
+              Posso garantir que seu site funcione bem em diferentes dispositivos,
+              como smartphones, tablets e desktops, adaptando o layout e os elementos visuais.
+              <p>
+                Implementando Interfaces: Posso  transformar designs em código,
+                utilizando linguagens como HTML, CSS e JavaScript para criar interfaces atraentes e funcionais.
+              </p>
+              <p>
+                Otimização de Performance: Posso otimizar o carregamento e a performance do seu site,
+                garantindo que os usuários tenham uma experiência rápida e fluida.
+              </p>
+              Testes e Manutenção: Posso fazer testes para identificar e corrigir bugs,
+              além de manter o site atualizado com as últimas tecnologias e tendências.
+              <div id="more"></div>
+            </p>
+            <Link className="btn" to="#more">read more</Link>
+          </div>
+        </div>
+      </section>
+
+      <section class="portifolio" id="projetos">
+        {/* <h2 className="projeto">Meus<span>Projetos</span></h2> */}
+        <div class="portifolio-container">
+          <div className="portifolio-box">
+            <img src={Img1} alt="portifolio-1" />
+
+            <div class="portifolio-layer">
+              <h4>web Development</h4>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                iusto sunt eum quidem aliquam porro molestias, odit nobis
+                excepturi iure. quae sed sunt architectoreprehenderit repellat
+                officiis quasi soluta. quae sed sunt architectoreprehenderit
+                repellat officiis quasi soluta
+              </p>
+              <Link className="link-Layer" to="#home"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <a href="#" class="btn">Dowload CV</a>
+        <div class="portifolio-container">
+          <div class="portifolio-box">
+            <img src={Img2} alt="portifolio-2" />
 
-          
+            <div class="portifolio-layer">
+              <h4>web Development</h4>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                iusto sunt eum quidem aliquam porro molestias, odit nobis
+                excepturi iure. quae sed sunt architectoreprehenderit repellat
+                officiis quasi soluta. quae sed sunt architectoreprehenderit
+                repellat officiis quasi soluta
+              </p>
+              <Link className="link-Layer" to="#home"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="home-img">
-        <img src="./img/minhaIMG .png" alt="Perfil" />
-      </div>
-    </section>
-    )
+
+        <div class="portifolio-container">
+          <div class="portifolio-box">
+            <img src={Img3} alt="portifolio-3" />
+
+            <div class="portifolio-layer">
+              <h4>web Development</h4>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                iusto sunt eum quidem aliquam porro molestias, odit nobis
+                excepturi iure. quae sed sunt architectoreprehenderit repellat
+                officiis quasi soluta. quae sed sunt architectoreprehenderit
+                repellat officiis quasi soluta
+              </p>
+              <Link className="link-Layer" to="#home"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="portifolio-container">
+          <div class="portifolio-box">
+            <img src={Img4} alt="portifolio-4" />
+
+            <div class="portifolio-layer">
+              <h4>web Development</h4>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                iusto sunt eum quidem aliquam porro molestias, odit nobis
+                excepturi iure. quae sed sunt architectoreprehenderit repellat
+                officiis quasi soluta. quae sed sunt architectoreprehenderit
+                repellat officiis quasi soluta
+              </p>
+              <Link className="link-Layer" to="#home"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+            </div>
+          </div>
+        </div>
+
+        <div class="portifolio-container">
+          <div class="portifolio-box">
+            <img src={Img5} alt="portifolio-5" />
+
+            <div class="portifolio-layer">
+              <h4>web Development</h4>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                iusto sunt eum quidem aliquam porro molestias, odit nobis
+                excepturi iure. quae sed sunt architectoreprehenderit repellat
+                officiis quasi soluta. quae sed sunt architectoreprehenderit
+                repellat officiis quasi soluta
+              </p>
+
+              <Link className="link-Layer" to="#home"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+            </div>
+          </div>
+        </div>
+
+        <div class="portifolio-container">
+          <div class="portifolio-box">
+            <img src={Img16} alt="portifolio-6" />
+
+            <div class="portifolio-layer">
+              <h4>web Development</h4>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                iusto sunt eum quidem aliquam porro molestias, odit nobis
+                excepturi iure. quae sed sunt architectoreprehenderit repellat
+                officiis quasi soluta. quae sed sunt architectoreprehenderit
+                repellat officiis quasi soluta
+              </p>
+              <Link className="link-Layer" to="#home"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="contato" id="contato">
+        <h2>contate<span>-me!</span></h2>
+
+        <Formulario />
+        <section className="sobre" id="sobre">
+          <div class="sobre-img">
+            <img src={Perfil} alt="perfil" />
+          </div>
+
+          <div className="conteiner-sobre">
+            <h3>sobre mim</h3>
+            <h1>Desenvolvedor<span> Front-end</span></h1>
+            <p>
+              Sou estudante de desenvolvimento front-end,
+              tenho pouca experiência de mercado, mas muita
+              força de vontade.
+              Atualmente busco uma vaga de estagio para aprimorar
+              meus conhecimentos
+            </p>
+            <Link to="#" className="btn">leia mais</Link>
+          </div>
+        </section>
+      </section>
+    </main>
+  )
 }

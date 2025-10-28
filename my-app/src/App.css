@@ -1,4 +1,40 @@
- #App {
+:root {
+    --cor-pricipal: #1f242d;
+    --cor-secundaria: #323946;
+    --cor-de-destaque: #00eeff;
+    --text-primario: #ffffff;
+    --text-secundario: #2b4e72;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+.html {
+    overflow-x: hidden;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
 
- }
+body {
+    overflow-x: hidden;
+    font-family: "Gupter", serif;
+    background-color: var(--cor-pricipal);
+    color: var(--text-primario);
+}
+
+body p {
+    font-size: 22px;
+}
+
+body a {
+    text-decoration: none;
+}
+
+#App {}
