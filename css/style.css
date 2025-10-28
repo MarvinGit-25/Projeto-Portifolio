@@ -105,6 +105,7 @@ span {
  width: 85%;
 }
 
+
 .home-img img, .sobre-img img {
   border-radius: 50%;
   box-shadow: 2px 2px  var(--main-color);
@@ -540,11 +541,7 @@ footer {
 }
 
 @media (min-width: 992px) {
-    /* .home-img, .sobre-img {
-      max-width: 35%;
-    } */
      
-
     .menu-hamburguer {
       display: none;
     }
@@ -585,7 +582,7 @@ footer {
     }
 
     header {
-        /* background-color: var(--color-04) ; */
+    
     }
 }
 
@@ -624,7 +621,7 @@ footer {
   
 
   header {
-      /* background-color: var(--color-05) ; */
+      
   }
 }
 
