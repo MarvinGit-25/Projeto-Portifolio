@@ -1,5 +1,6 @@
 import { React } from "react";
 import "./section.css";
+import Button from "./ButtonCV";
 import Formulario from "./Formulario";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
@@ -58,7 +59,7 @@ export default function Section() {
             </Link>
           </div>
           <div className="div-button">
-            <button className="button-cv">Dowload CV</button>
+            <Button />
           </div>
         </div>
         <div className="home-img">
