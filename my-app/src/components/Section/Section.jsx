@@ -1,20 +1,20 @@
 import { React } from "react";
 import "./section.css";
-import Button from "./ButtonCV";
-import Formulario from "./Formulario";
+import Button from "../ButtonCV/ButtonCV";
+import Formulario from "../Formulario/Formulario";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Perfil from "./img/meuPerfilWeb3D.png";
-import Img1 from "./img/img1.jpeg";
-import Img2 from "./img/img2.jpeg";
-import Img3 from "./img/img3.jpeg";
-import Img4 from "./img/img4.jpeg";
-import Img5 from "./img/img4.jpeg";
-import Img16 from "./img/img6.jpeg";
+import Perfil from "../../assets/img/meuPerfilWeb3D.png";
+import Img1 from "../../assets/img/img1.jpeg";
+import Img2 from "../../assets/img/img2.jpeg";
+import Img3 from "../../assets/img/img3.jpeg";
+import Img4 from "../../assets/img/img4.jpeg";
+import Img5 from "../../assets/img/img4.jpeg";
+import Img16 from "../../assets/img/img6.jpeg";
 
 export default function Section() {
   return (
