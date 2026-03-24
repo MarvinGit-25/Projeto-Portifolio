@@ -1,0 +1,105 @@
+.contato {
+  padding: 5rem 5%;
+  padding-bottom: 5rem;
+}
+
+.contato h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contato h2 span {
+  color: var(--cor-de-destaque);
+  text-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+}
+
+/* --- ESTILOS DO FORMULÁRIO --- */
+.contato form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contato form .input-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contato form .input-box > input,
+.contato form textarea {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  color: var(--text-primario);
+  background: rgba(8, 12, 21, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.contato form textarea {
+  resize: none;
+  min-height: 200px;
+  margin-bottom: 2rem;
+}
+
+.contato form .input-box > input:focus,
+.contato form textarea:focus {
+  border-color: var(--cor-de-destaque);
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.2);
+  outline: none;
+}
+
+.contato form .input-box > input::placeholder,
+.contato form textarea::placeholder {
+  color: var(--text-secundario);
+}
+
+.contato form input[type="number"]::-webkit-outer-spin-button,
+.contato form input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.contato form .btnForm {
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem 3.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cor-pricipal);
+  background: var(--cor-de-destaque);
+  border-radius: 2rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.contato form .btnForm:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .contato h2 {
+    font-size: 2.2rem;
+  }
+
+  .contato form .input-box {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

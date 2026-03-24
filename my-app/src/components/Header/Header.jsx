@@ -1,42 +1,40 @@
-import './header.css'
-import React from "react";
+import './header.css';
+import React, { useState } from "react";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   function toggleMenu() {
-    const nav = document.querySelector('.nav-responsive')
-    const menuHamburguer = document.querySelector('.Menu-Hamburguer')
-    menuHamburguer.classList.toggle('change')
-    if (menuHamburguer.classList.contains('change')) {
-      nav.style.display = 'block'
-    }
-    else {
-      nav.style.display = 'none'
-    }
+    setIsMenuOpen(!isMenuOpen);
   }
 
   return (
-    <div className="Cabeçalho">
-      <nav className="nav-responsive">
-        <a href="#home">Home</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
+    <header className="Cabeçalho">
+      <nav className={`nav-responsive ${isMenuOpen ? 'open' : ''}`}>
+        <a href="#home" onClick={toggleMenu}>Home</a>
+        <a href="#projetos" onClick={toggleMenu}>Projetos</a>
+        <a href="#sobre" onClick={toggleMenu}>Sobre</a>
+        <a href="#contato" onClick={toggleMenu}>Contato</a>
       </nav>
 
       <nav className="nav">
-        <h1>Vinicius Silva</h1>
-        <a href="#home">Inicio</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
+        <h1 className="logo">Vinicius</h1>
+        
+        <div className="nav-links">
+          <a href="#home">Início</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+        </div>
 
-        <div className='Menu-Hamburguer' onClick={toggleMenu}>
+        <div className={`Menu-Hamburguer ${isMenuOpen ? 'change' : ''}`} onClick={toggleMenu}>
           <div className='linha1'></div>
           <div className='linha2'></div>
           <div className='linha3'></div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 }
+
 export default Header;

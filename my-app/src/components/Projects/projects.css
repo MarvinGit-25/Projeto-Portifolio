@@ -1,0 +1,180 @@
+.portifolio {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(8, 12, 21, 1) 100%);
+  padding: 5rem 5%;
+}
+
+.portifolio-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Boxes maiores */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portifolio-header {
+  grid-column: 1 / -1;
+}
+
+.portifolio-header h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.portifolio-header h2 span {
+  color: var(--cor-de-destaque);
+}
+
+.portifolio-box {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+  height: 100%;
+}
+
+.portifolio-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 238, 255, 0.2);
+}
+
+.portifolio-box img {
+  width: 100%;
+  height: 300px; /* Aumentado de 250px */
+  /* Consistently sized images */
+  object-fit: cover;
+  object-position: top;
+  /* Começa mostrando o topo do site */
+  display: block;
+  transition: object-position 4s ease-in-out;
+  /* Transição mais lenta para imagens maiores */
+  /* Transição de 3 segundos para uma rolagem suave */
+}
+
+/* Quando passa o mouse no projeto inteiro, a imagem rola até o rodapé */
+.portifolio-box:hover img {
+  object-position: bottom;
+}
+
+/* Dark overlay for better legibility when not hovered */
+.portifolio-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.portifolio-box:hover::before {
+  opacity: 0;
+}
+
+.portifolio-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 70%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  opacity: 0; /* Garante que não apareça antes do hover */
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.portifolio-layer.tall-layer {
+  height: 85%;
+}
+
+
+.portifolio-box:hover .portifolio-layer {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.portifolio-layer h4 {
+  font-size: 1.5rem;
+  color: var(--cor-de-destaque);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.portifolio-layer p {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.portifolio-btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary-layer {
+  background: var(--cor-de-destaque);
+  color: var(--cor-pricipal);
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  transform: scale(0);
+}
+
+.btn-github-layer {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.portifolio-box:hover .btn-primary-layer,
+.portifolio-box:hover .btn-github-layer {
+  transform: scale(1);
+}
+
+.btn-primary-layer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--cor-de-destaque);
+}
+
+.btn-github-layer:hover {
+  background: #fff;
+  color: var(--cor-pricipal);
+  transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+  .portifolio-header h2 {
+    font-size: 2.2rem;
+  }
+}

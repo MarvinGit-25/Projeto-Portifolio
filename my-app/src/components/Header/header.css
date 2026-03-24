@@ -1,98 +1,145 @@
-.Cabeçalho {}
+.Cabeçalho {
+  width: 100%;
+}
 
 .Cabeçalho .nav {
   top: 0;
   left: 0;
   position: fixed;
   width: 100%;
-  height: 13vh;
-  /* height: 12%; */
-  background-color: #323946;
+  height: 80px;
+  background: rgba(8, 12, 21, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   z-index: 100;
+  padding: 0 8%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
-.Cabeçalho .nav h1 {
+
+.Cabeçalho .nav .logo {
   color: var(--text-primario);
-  position: absolute;
-  left: 0;
-  font-size: 2rem;
-  padding: 0rem 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
 }
 
 .Cabeçalho .nav a {
-  /* padding: 10px 50px; */
-  padding: 0.8rem 2.2rem;
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   color: var(--text-primario);
   font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 }
 
-.Cabeçalho nav a:hover {
-  color: aqua;
+.Cabeçalho .nav a:hover {
+  color: var(--cor-de-destaque);
+  text-shadow: 0 0 15px var(--cor-de-destaque);
+}
+
+/* Hover underline effect */
+.Cabeçalho .nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--cor-de-destaque);
+  bottom: -6px;
+  left: 0;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--cor-de-destaque);
+}
+
+.Cabeçalho .nav a:hover::after {
+  width: 100%;
 }
 
 .Menu-Hamburguer {
   display: none;
-  margin-right: 1.4rem;
-  width: 2.5rem;
+  width: 35px;
   cursor: pointer;
 }
 
 .linha1,
 .linha2,
 .linha3 {
-  margin: 0.5rem 0;
   width: 100%;
-  height: 0.35rem;
+  height: 3px;
   background-color: var(--text-primario);
+  margin: 7px 0;
+  transition: 0.4s ease;
+  border-radius: 5px;
 }
 
 .nav-responsive {
   display: none;
-  position: absolute;
-  width: 100%;
-  height: 35%;
-  padding-left: 3.3rem;
 }
 
-.nav-responsive a {
-  display: none;
-  color: var(--text-primario);
-  padding: 1rem;
-}
+@media (max-width: 768px) {
+  .Cabeçalho .nav {
+    padding: 0 5%;
+  }
 
-.change .linha1 {
-  transform: translate(0, 0.65rem) rotate(-45deg);
-
-}
-
-
-.change .linha2 {
-  opacity: 0;
-
-}
-
-.change .linha3 {
-  transform: translate(0, -0.98rem) rotate(45deg);
-
-}
-
-@media (width < 768px) {
   .Menu-Hamburguer {
     display: block;
-  } 
-  
-  .nav-responsive{
-    background-color: var(--cor-pricipal);
-    
   }
   
-   .nav-responsive a {
-    display: block;
-    font-size: 1.5rem;
-
+  .nav-links {
+    display: none;
   }
 
+  .nav-responsive {
+    display: flex;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: rgba(8, 12, 21, 0.95);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    transition: left 0.4s ease-in-out;
+    z-index: 99;
+  }
+
+  .nav-responsive.open {
+    left: 0;
+  }
+  
+  .nav-responsive a {
+    font-size: 2rem;
+    color: var(--text-primario);
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .nav-responsive a:hover {
+    color: var(--cor-de-destaque);
+    text-shadow: 0 0 15px var(--cor-de-destaque);
+  }
+
+  .change .linha1 {
+    transform: translate(0, 10px) rotate(-45deg);
+    background-color: var(--cor-de-destaque);
+  }
+
+  .change .linha2 {
+    opacity: 0;
+  }
+
+  .change .linha3 {
+    transform: translate(0, -10px) rotate(45deg);
+    background-color: var(--cor-de-destaque);
+  }
 }
